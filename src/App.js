@@ -10,8 +10,14 @@ function App() {
     return (
         <div className="App">
             <Router>
+                <Link to={'/Home-admin'}></Link>
                 <Switch>
                     <Route exact path="/" component={Login}></Route>
+                    <Route
+                        exact
+                        path="/forgotPassword"
+                        component={ForgotPassword}
+                    ></Route>
                     <Route
                         exact
                         path="/forgotPassword"
