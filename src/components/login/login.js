@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import logo from '../../assets/bunbu.png'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-import ForgotPassword from '../forgotPassword/forgotPassword'
-import axios from 'axios'
+import ForgotPassword from '../forgotPassword'
 export default function Login(props) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
