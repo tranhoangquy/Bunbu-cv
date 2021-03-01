@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
 import logo from '../../assets/bunbu.png'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-import ForgotPassword from '../forgotPassword/forgotPassword'
+
 export default function Login(props) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const getValueemail = (e) => {
-        setEmail(e.target.value)
-    }
-    const getValuepassword = (e) => {
-        setPassword(e.target.value)
-    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
     }
@@ -27,7 +22,7 @@ export default function Login(props) {
                         type="email"
                         placeholder="Enter email"
                         className="form-control"
-                        onChange={getValueemail}
+                        onChange={(e) => setEmail(e.target.value)}
                         required="true"
                     />
                 </div>
@@ -36,7 +31,7 @@ export default function Login(props) {
                         type="password"
                         placeholder="Enter password"
                         className="form-control"
-                        onChange={getValuepassword}
+                        onChange={(e) => setPassword(e.target.value)}
                         required="true"
                     />
                 </div>
