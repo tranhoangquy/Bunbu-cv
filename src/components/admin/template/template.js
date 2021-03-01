@@ -17,16 +17,16 @@ export default function Template(props) {
                 {' '}
                 List Template
             </h2>
-            <Button style={{ marginLeft: '18%' }}>Add CV</Button>
 
             <Form>
                 <Form.Row>
                     <Form.Control
                         type="text"
                         placeholder="Search"
-                        style={{ marginRight: 10 }}
+                        style={{ marginLeft: '25%', maxWidth: '500px' }}
                     />
                     <Button type="submit"> Search</Button>
+                    <Button style={{ marginLeft: '5%' }}>Add CV</Button>
                 </Form.Row>
             </Form>
 
