@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 export default function Login(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+  const getValueemail = (e) => {
+    setEmail(e.target.value)
+  }
   const handleSubmit = (e) => {
     e.preventDefault()
   }
