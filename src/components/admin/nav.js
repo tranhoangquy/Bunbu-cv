@@ -6,7 +6,7 @@ export default function Nav(props) {
     return (
         <>
             <nav className="navbar navbar-expand navbar-light fixed-top">
-                <Link to={'#'} className="navbar-brand">
+                <Link to={'admin'} className="navbar-brand">
                     <img src={bunbu} style={{ height: '55px' }} />
                 </Link>
                 <ul className="navbar-nav ">
