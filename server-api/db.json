@@ -1,0 +1,18 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "name": "Hà Thế Trung",
+            "email": "trunght@bunbusoft.com",
+            "password": "123456",
+            "role": "1"
+        },
+        {
+            "id": "2",
+            "name": "Trần Hoàng Quy",
+            "email": "tranhoangquy98@gmail.com",
+            "password": "123456",
+            "role": "0"
+        }
+    ]
+}
