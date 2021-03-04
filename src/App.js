@@ -2,6 +2,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import routes from './Router'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+
 function App() {
   const showScreen = (routes) => {
     const result = routes.map((route, index) => {

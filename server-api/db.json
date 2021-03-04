@@ -4,15 +4,21 @@
             "id": "1",
             "name": "Hà Thế Trung",
             "email": "trunght@bunbusoft.com",
+            "sex": "Male",
+            "address": "Hà Nội",
+            "phonenumber": "0123456789",
             "password": "123456",
-            "role": "1"
+            "role": "user"
         },
         {
             "id": "2",
             "name": "Trần Hoàng Quy",
             "email": "tranhoangquy98@gmail.com",
+            "sex": "Male",
+            "address": "Hà Nội",
+            "phonenumber": "0123456789",
             "password": "123456",
-            "role": "0"
+            "role": "admin"
         }
     ]
 }
