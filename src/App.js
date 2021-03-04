@@ -9,6 +9,12 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/signup" component={SignUp}></Route>
+          <Route
+            exact
+            path="/forgotPassword"
+            component={ForgotPassword}
+          ></Route>
+          <Route exact path="/" component={Login}></Route>
         </Switch>
       </Router>
     </div>
