@@ -1,6 +1,4 @@
 import React from 'react'
 
-const route = [
-  
-]
+const route = []
 export default route
