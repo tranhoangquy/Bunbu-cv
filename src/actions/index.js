@@ -3,6 +3,7 @@ import {
   FETCH_USERS_REQUEST,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_ERROR,
+  ADD_USER_DATA,
 } from '../constants/index.js'
 import axios from './axios'
 export const loadUser = () => async (dispatch) => {
@@ -20,5 +21,17 @@ export const loadUser = () => async (dispatch) => {
       type: FETCH_USERS_ERROR,
       message: err,
     })
+  }
+}
+export const addUser = () => async (dispatch) => {
+  try {
+    const response = await axios.post('/users')
+    const responseBody = await response.data
+    dispatch({
+      type: ADD_USER_DATA,
+      data: responseBody,
+    })
+  } catch (err) {
+    console.log(err)
   }
 }
