@@ -4,7 +4,7 @@ import routes from './Router'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import SignUp from './components/register/register'
 import ForgotPassword from './components/forgotPassword/forgotPassword'
-import Login from './components/forgotPassword/forgotPassword'
+import Login from './components/login/login'
 function App() {
   return (
     <div className="App">
