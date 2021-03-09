@@ -33,7 +33,7 @@ export default function Nav(props) {
           >
             <dl style={{ textAlign: 'center' }}>
               <dt style={{ marginBottom: 10 }}>
-                <Link to="/profile">profile</Link>
+                <Link to="/profileadmin">profile</Link>
               </dt>
               <dt>
                 <Link

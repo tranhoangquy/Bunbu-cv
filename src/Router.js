@@ -4,6 +4,7 @@ import Template from './components/admin/template/template'
 import Navaccount from './components/admin/account/nav-account'
 import ListStaff from './components/admin/account/liststaffs'
 import AddAccount from './components/admin/account/addAccount'
+
 const route = [
   {
     path: '/admin',

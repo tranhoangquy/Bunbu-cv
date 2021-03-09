@@ -7,11 +7,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import DeleteModal from './ShowModals/DeleteModal'
 import EditModal from './ShowModals/EditModal'
 import { loadUser } from '../../../actions/index'
-export default function ListStaff({ liststaffs, setListstaff }) {
+import ClipLoader from 'react-spinners/ClipLoader'
+
+export default function ListStaff() {
+  const css = { display: 'block', margin: '0 auto', borderColor: 'blue' }
   // const users = useSelector((state) => state.Accounts.users)
   const data = useSelector((state) => state.users.data)
   const requesting = useSelector((state) => state.users.requesting)
-  console.log(data, requesting)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(loadUser())
@@ -32,22 +34,23 @@ export default function ListStaff({ liststaffs, setListstaff }) {
             <Button type="submit"> Search</Button>
           </Form.Row>
         </Form>
-        <Table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Password</th>
-              <th>Delete</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
-          {/* <tbody> */}
-          {requesting ? (
-            <tbody>Loading</tbody>
-          ) : data && data.length > 0 ? (
+        {requesting ? (
+          <ClipLoader color={'#000000'} loading={true} css={css} size={150} />
+        ) : data && data.length > 0 ? (
+          <Table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Password</th>
+                <th>Delete</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            {/* <tbody> */}
+
             <tbody>
               {data.map(
                 (e) => (
@@ -69,11 +72,10 @@ export default function ListStaff({ liststaffs, setListstaff }) {
                 // )
               )}
             </tbody>
-          ) : (
-            <tbody>data emty</tbody>
-          )}
-          {/* </tbody> */}
-        </Table>
+          </Table>
+        ) : (
+          <h2 css={css}>Data empty</h2>
+        )}
       </Container>
     </>
   )

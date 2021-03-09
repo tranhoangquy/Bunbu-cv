@@ -3,6 +3,9 @@ import {
   FETCH_USERS_REQUEST,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_ERROR,
+  ADD_USER_SUCCESS,
+  ADD_USER_REQUEST,
+  ADD_USER_ERROR,
 } from '../constants/index'
 
 const initialState = {
@@ -31,6 +34,24 @@ const userReducer = (state = initialState, payload) => {
         requesting: false,
         success: false,
         message: payload.message,
+      }
+    case ADD_USER_REQUEST:
+      return {
+        ...state,
+        requesting: true,
+      }
+    case ADD_USER_SUCCESS:
+      return {
+        ...state,
+        requesting: false,
+        data: [state.data, payload.data],
+      }
+    case ADD_USER_ERROR:
+      return {
+        ...state,
+        requesting:false,
+        success:false,
+        message:payload.message,
       }
     default:
       return state
