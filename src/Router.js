@@ -4,7 +4,7 @@ import Template from './components/admin/template/template'
 import Navaccount from './components/admin/account/nav-account'
 import ListStaff from './components/admin/account/liststaffs'
 import AddAccount from './components/admin/account/addAccount'
-
+import ListCV from './components/admin/listCV/listCV'
 const route = [
   {
     path: '/admin',
@@ -30,6 +30,11 @@ const route = [
     path: '/addaccount',
     exact: false,
     main: () => <AddAccount />,
+  },
+  {
+    path: '/listcv',
+    exact: false,
+    main: () => <ListCV />,
   },
 ]
 export default route

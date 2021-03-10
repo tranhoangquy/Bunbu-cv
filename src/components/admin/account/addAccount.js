@@ -26,8 +26,7 @@ export default function AddAccount() {
     setValuesform((prevState) => ({
       ...prevState,
       [name]: value,
-    } 
-    ))
+    }))
   }
 
   const handlesubmit = (event) => {
