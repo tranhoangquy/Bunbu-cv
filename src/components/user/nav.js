@@ -2,6 +2,7 @@ import Recat, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { SplitButton } from 'react-bootstrap'
 import bunbu from '../../assets/logo.png'
+import './homeUser.css'
 export default function Nav(props) {
   return (
     <>
@@ -11,17 +12,12 @@ export default function Nav(props) {
         </Link>
         <ul className="navbar-nav ">
           <li className="nav-item">
-            <Link to={'/template'} className="nav-link">
+            <Link to={'/templateuser'} className="nav-link">
               Template
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={'/liststaff'} className="nav-link">
-              Account
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={'/listcv'} className="nav-link">
+            <Link to={'/listcvuser'} className="nav-link">
               List CV
             </Link>
           </li>
