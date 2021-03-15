@@ -3,6 +3,8 @@ import { Container, Button, Row, Col, Form } from 'react-bootstrap'
 import Nav from '../nav'
 import tmp01 from '../../../assets/template1.jpg'
 import DeleteModal from '../showModal/deleteModal'
+import EditCvModal from '../showModal/editModal/editModal'
+import ViewCvModal from '../showModal/viewModal/viewModal'
 export default function ListCv() {
   return (
     <>
@@ -58,9 +60,14 @@ export default function ListCv() {
                 </Col>
               </Row>
             </Col>
-            <Col style={{ marginTop: '50px' }}></Col>
-            <Col style={{ marginTop: '50px' }}>
+            <Col sm={1} style={{ marginTop: '50px' }}>
+              <EditCvModal />
+            </Col>
+            <Col sm={1} style={{ marginTop: '50px' }}>
               <DeleteModal />
+            </Col>
+            <Col sm={1} style={{ marginTop: '50px' }}>
+              <ViewCvModal />
             </Col>
           </Row>
         </Container>
