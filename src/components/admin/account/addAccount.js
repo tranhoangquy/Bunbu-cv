@@ -5,11 +5,11 @@ import Navaccount from './nav-account'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useSelector, useDispatch } from 'react-redux'
-
+import { addUser } from '../../../actions/index'
 export default function AddAccount() {
   const data = useSelector((state) => state.users.data)
   const requesting = useSelector((state) => state.users.requesting)
-
+  const dispatch = useDispatch()
   const [valuesform, setValuesform] = useState({
     name: '',
     email: '',
@@ -26,13 +26,12 @@ export default function AddAccount() {
     setValuesform((prevState) => ({
       ...prevState,
       [name]: value,
-    } 
-    ))
+    }))
   }
 
   const handlesubmit = (event) => {
     event.preventDefault()
-    console.log(valuesform)
+    dispatch(addUser({ valuesform }))
   }
   return (
     <>

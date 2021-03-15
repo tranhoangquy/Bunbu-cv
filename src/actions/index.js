@@ -24,17 +24,17 @@ export const loadUser = () => async (dispatch) => {
     })
   }
 }
-export const addUser = ({ valueform }) => async (dispatch) => {
+export const addUser = ({ valuesform }) => async (dispatch) => {
   try {
     dispatch({ type: ADD_USER_REQUEST })
-    const response = await axios.post('/users', valueform)
+    const response = await axios.post('/users', valuesform)
+
     const responseBody = await response.data
     dispatch({
       type: ADD_USER_SUCCESS,
-      data: responseBody,
+      data: { ...responseBody, ...valuesform },
     })
   } catch (err) {
-    console.log(err)
     dispatch({
       type: ADD_USER_ERROR,
       message: err,

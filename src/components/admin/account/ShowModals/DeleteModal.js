@@ -14,7 +14,7 @@ export default function DeleteModal(props) {
   return (
     <>
       <AiFillDelete onClick={handleShowModalDel} />
-      <Modal show={showdeletemodal} onClick={handleClose}>
+      <Modal show={showdeletemodal}>
         <Modal.Header closeButton>
           <Modal.Title>Bạn có chắc chắn muốn xóa</Modal.Title>
         </Modal.Header>
@@ -23,9 +23,7 @@ export default function DeleteModal(props) {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Yes
-          </Button>
+          <Button variant="primary">Yes</Button>
         </Modal.Footer>
       </Modal>
     </>
