@@ -9,14 +9,14 @@ export default function Navaccount(props) {
       <Navbar style={{ margin: '6% 0px 0px' }}>
         <ul className="navbar-nav headers " style={{ fontSize: '15px' }}>
           <li className="nav-item">
-            <Link to={'/liststaff'} className="nav-link">
+            <Link to={'/listuser'} className="nav-link">
               Staff/HR
             </Link>
           </li>
 
           <li className="nav-item">
-            <Link to={'/addaccount'} className="nav-link">
-              AddAccount
+            <Link to={'/adduser'} className="nav-link">
+              Add User
             </Link>
           </li>
         </ul>

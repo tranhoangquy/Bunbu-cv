@@ -16,7 +16,7 @@ export default function Nav(props) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={'/liststaff'} className="nav-link">
+            <Link to={'/listuser'} className="nav-link">
               Account
             </Link>
           </li>

@@ -7,6 +7,7 @@ export default function HomeAdmin(props) {
   return (
     <>
       <Nav />
+      
       <div style={{ margin: '15% 0px 0px 0px' }}>
         <img src={Background} />
       </div>

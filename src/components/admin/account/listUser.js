@@ -6,10 +6,10 @@ import Navaccount from './nav-account'
 import { useSelector, useDispatch } from 'react-redux'
 import DeleteModal from './ShowModals/DeleteModal'
 import EditModal from './ShowModals/EditModal'
-import { loadUser } from '../../../actions/index'
+import { loadUser } from '../../../actions/handlingUser'
 import ClipLoader from 'react-spinners/ClipLoader'
 
-export default function ListStaff() {
+export default function ListUser(props) {
   const css = { display: 'block', margin: '0 auto', borderColor: 'blue' }
   // const users = useSelector((state) => state.Accounts.users)
   const data = useSelector((state) => state.users.data)
@@ -44,7 +44,7 @@ export default function ListStaff() {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th>Password</th>
+                <th>Ngày sinh</th>
                 <th>Delete</th>
                 <th>Edit</th>
               </tr>

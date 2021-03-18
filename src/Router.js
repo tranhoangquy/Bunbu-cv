@@ -2,8 +2,8 @@ import React from 'react'
 import HomeAdmin from './components/admin/homeAdmin'
 import Template from './components/admin/template/template'
 import Navaccount from './components/admin/account/nav-account'
-import ListStaff from './components/admin/account/liststaffs'
-import AddAccount from './components/admin/account/addAccount'
+import ListUser from './components/admin/account/listUser'
+import AddUser from './components/admin/account/addUser'
 
 const route = [
   {
@@ -22,14 +22,14 @@ const route = [
     main: () => <Navaccount />,
   },
   {
-    path: '/liststaff',
+    path: '/listuser',
     exact: false,
-    main: () => <ListStaff />,
+    main: () => <ListUser />,
   },
   {
-    path: '/addaccount',
+    path: '/adduser',
     exact: false,
-    main: () => <AddAccount />,
+    main: () => <AddUser />,
   },
 ]
 export default route

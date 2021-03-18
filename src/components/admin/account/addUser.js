@@ -5,10 +5,10 @@ import Navaccount from './nav-account'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useSelector, useDispatch } from 'react-redux'
-import { addUser } from '../../../actions/index'
-export default function AddAccount() {
+import { addUser } from '../../../actions/handlingUser'
+export default function AddUser() {
   const data = useSelector((state) => state.users.data)
-  const requesting = useSelector((state) => state.users.requesting)
+  const requesting = useSelector((state) => state.data.requesting)
   const dispatch = useDispatch()
   const [valuesform, setValuesform] = useState({
     name: '',
@@ -48,7 +48,7 @@ export default function AddAccount() {
         <Form.Group controlId="validationCustom01">
           <Row sm="13">
             <Col sm="3">
-              <lable>Name:</lable>
+              <p>Name:</p>
             </Col>
 
             <Col sm="10">
@@ -64,7 +64,7 @@ export default function AddAccount() {
           </Row>
           <Row sm="13">
             <Col sm="3">
-              <lable>Email:</lable>
+              <p>Email:</p>
             </Col>
             <Col sm="10">
               <Form.Control
@@ -83,7 +83,7 @@ export default function AddAccount() {
         <Form.Group>
           <Row sm="13">
             <Col sm="3">
-              <lable>Sex:</lable>
+              <p>Sex:</p>
             </Col>
 
             <Col
@@ -113,7 +113,7 @@ export default function AddAccount() {
           </Row>
           <Row sm="13">
             <Col sm="3">
-              <lable>Phone Number:</lable>
+              <p>Phone Number:</p>
             </Col>
             <Col sm="10">
               <Form.Control
@@ -132,7 +132,7 @@ export default function AddAccount() {
         <Form.Group>
           <Row sm="13">
             <Col sm="3">
-              <lable>Address:</lable>
+              <p>Address:</p>
             </Col>
 
             <Col sm="10">
@@ -147,7 +147,7 @@ export default function AddAccount() {
           </Row>
           <Row sm="13">
             <Col sm="2">
-              <lable>Role:</lable>
+              <p>Role:</p>
             </Col>
             <Col sm="12">
               <Form.Control
@@ -167,7 +167,7 @@ export default function AddAccount() {
         <Form.Group>
           <Row sm="13">
             <Col sm="3">
-              <lable>Date of Birth:</lable>
+              <p>Date of Birth:</p>
             </Col>
             <Col sm="10">
               <Form.Control
@@ -181,7 +181,7 @@ export default function AddAccount() {
           </Row>
           <Row sm="13">
             <Col sm="3">
-              <lable>Password:</lable>
+              <p>Password:</p>
             </Col>
 
             <Col sm="10">
