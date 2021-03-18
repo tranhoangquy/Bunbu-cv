@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
 import Nav from '../nav'
 import Navaccount from './nav-account'
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
 import { useSelector, useDispatch } from 'react-redux'
 import { addUser } from '../../../actions/handlingUser'
 export default function AddUser() {
   const data = useSelector((state) => state.users.data)
-  const requesting = useSelector((state) => state.data.requesting)
+  const requesting = useSelector((state) => state.users.requesting)
   const dispatch = useDispatch()
   const [valuesform, setValuesform] = useState({
     name: '',
@@ -64,7 +62,7 @@ export default function AddUser() {
           </Row>
           <Row sm="13">
             <Col sm="3">
-              <p>Email:</p>
+              <>Email:</>
             </Col>
             <Col sm="10">
               <Form.Control
@@ -83,7 +81,7 @@ export default function AddUser() {
         <Form.Group>
           <Row sm="13">
             <Col sm="3">
-              <p>Sex:</p>
+              <>Sex:</>
             </Col>
 
             <Col
@@ -113,7 +111,7 @@ export default function AddUser() {
           </Row>
           <Row sm="13">
             <Col sm="3">
-              <p>Phone Number:</p>
+              <>Phone Number:</>
             </Col>
             <Col sm="10">
               <Form.Control
@@ -132,7 +130,7 @@ export default function AddUser() {
         <Form.Group>
           <Row sm="13">
             <Col sm="3">
-              <p>Address:</p>
+              <>Address:</>
             </Col>
 
             <Col sm="10">
@@ -147,7 +145,7 @@ export default function AddUser() {
           </Row>
           <Row sm="13">
             <Col sm="2">
-              <p>Role:</p>
+              <>Role:</>
             </Col>
             <Col sm="12">
               <Form.Control
@@ -167,7 +165,7 @@ export default function AddUser() {
         <Form.Group>
           <Row sm="13">
             <Col sm="3">
-              <p>Date of Birth:</p>
+              <>Date of Birth:</>
             </Col>
             <Col sm="10">
               <Form.Control
@@ -181,7 +179,7 @@ export default function AddUser() {
           </Row>
           <Row sm="13">
             <Col sm="3">
-              <p>Password:</p>
+              <>Password:</>
             </Col>
 
             <Col sm="10">

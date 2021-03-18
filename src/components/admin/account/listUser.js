@@ -11,7 +11,6 @@ import ClipLoader from 'react-spinners/ClipLoader'
 
 export default function ListUser(props) {
   const css = { display: 'block', margin: '0 auto', borderColor: 'blue' }
-  // const users = useSelector((state) => state.Accounts.users)
   const data = useSelector((state) => state.users.data)
   const requesting = useSelector((state) => state.users.requesting)
   const dispatch = useDispatch()
@@ -49,18 +48,16 @@ export default function ListUser(props) {
                 <th>Edit</th>
               </tr>
             </thead>
-            {/* <tbody> */}
 
             <tbody>
               {data.map(
                 (e) => (
-                  // return (
                   <tr key={e.id}>
                     <td>{e.id}</td>
                     <td>{e.name}</td>
                     <td>{e.email}</td>
                     <td>{e.role}</td>
-                    <td>{e.password}</td>
+                    <td>{e.dateofbirth}</td>
                     <td>
                       <DeleteModal id={e.id} name={e.name} email={e.email} />
                     </td>
