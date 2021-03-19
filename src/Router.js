@@ -22,13 +22,13 @@ const route = [
     main: () => <Navaccount />,
   },
   {
-    path: '/listuser',
-    exact: false,
+    path: '/users',
+    exact: true,
     main: () => <ListUser />,
   },
   {
-    path: '/adduser',
-    exact: false,
+    path: '/users/new',
+    exact: true,
     main: () => <AddUser />,
   },
 ]
