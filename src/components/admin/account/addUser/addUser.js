@@ -54,7 +54,7 @@ export default function AddUser() {
                 name="name"
                 value={valuesForm.name}
                 onChange={handleValue}
-                required={'true'}
+                required={true}
               />
             </Col>
           </Row>
@@ -69,7 +69,7 @@ export default function AddUser() {
                 name="email"
                 value={valuesForm.email}
                 onChange={handleValue}
-                required={'true'}
+                required={true}
                 pattern={email}
                 title="Email address is invalid"
               />
@@ -94,7 +94,7 @@ export default function AddUser() {
                 id="male"
                 value="male"
                 name="sex"
-                required={'true'}
+                required={true}
               />
               Male
               <input
@@ -102,7 +102,7 @@ export default function AddUser() {
                 id="female"
                 value="female"
                 name="sex"
-                required={'true'}
+                required={true}
               />
               Female
             </Col>
@@ -116,7 +116,7 @@ export default function AddUser() {
                 type="tel"
                 placeholder="Enter phone number"
                 name="phonemumber"
-                required={'true'}
+                required={true}
                 pattern={phonenumber}
                 title="Phonenumber is invalid and 10 numbers"
                 value={valuesForm.phonemumber}
@@ -151,7 +151,7 @@ export default function AddUser() {
                 name="role"
                 value={valuesForm.role}
                 onChange={handleValue}
-                required={'true'}
+                required={true}
               >
                 <option>Admin</option>
                 <option>User</option>
@@ -171,7 +171,7 @@ export default function AddUser() {
                 name="dateofbirth"
                 value={valuesForm.dateofbirth}
                 onChange={handleValue}
-                required={'true'}
+                required={true}
               />
             </Col>
           </Row>
@@ -187,7 +187,7 @@ export default function AddUser() {
                 name="password"
                 value={valuesForm.password}
                 onChange={handleValue}
-                required={'true'}
+                required={true}
                 pattern={password}
                 title="Password minimum 8 characters, at least one letter and a number"
               />
