@@ -17,12 +17,12 @@ export default function Nav(props) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={'/listuser'} className="nav-link">
+            <Link to={'/users'} className="nav-link">
               Account
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={'/listcv'} className="nav-link">
+            <Link to={'/users'} className="nav-link">
               List CV
             </Link>
           </li>
