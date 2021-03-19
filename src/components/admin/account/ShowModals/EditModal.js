@@ -30,7 +30,7 @@ export default function EditModal(props) {
       <AiFillEdit onClick={() => setShowEditModal(true)}></AiFillEdit>
       <Modal show={showEditModal}>
         <Modal.Header>
-          <Modal.Title>1313123</Modal.Title>
+          <Modal.Title>{props.name}</Modal.Title>
         </Modal.Header>
         <Form onSubmit={handleSubmitEdit}>
           <Modal.Body>
@@ -40,7 +40,7 @@ export default function EditModal(props) {
                   <Col sm={8}>
                     <Row>
                       <Form.Control
-                        placeholder="Họ Tên"
+                        placeholder={props.name}
                         name="name"
                         required={true}
                         value={valuesForm.name}
@@ -68,6 +68,7 @@ export default function EditModal(props) {
                     </Row>
                     <Row>
                       <Form.Control
+                        placeholder={props.dateofbirth}
                         type="date"
                         name="dateofbirth"
                         required={true}
