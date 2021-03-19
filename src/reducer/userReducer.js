@@ -58,7 +58,6 @@ const userReducer = (state = initialState, actions) => {
       const filteredUsers = state.data.filter(
         (user) => user.id !== actions.payload.id
       )
-      console.log(filteredUsers)
       return {
         ...state,
         requesting: false,

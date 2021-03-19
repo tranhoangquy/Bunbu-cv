@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import Nav from '../nav'
+import Nav from '../../nav/nav'
 import { Form, Button, Container } from 'react-bootstrap'
 import { Table } from 'react-bootstrap'
-import Navaccount from './nav-account'
+import Navaccount from '../../navAccount/navAccount'
 import { useSelector, useDispatch } from 'react-redux'
-import DeleteModal from './ShowModals/DeleteModal'
-import EditModal from './ShowModals/EditModal'
-import { loadUser } from '../../../actions/handlingUser'
+import DeleteModal from '../ShowModals/DeleteModal'
+import EditModal from '../ShowModals/EditModal'
+import { loadUser } from '../../../../actions/handlingUser'
 import ClipLoader from 'react-spinners/ClipLoader'
-
+import './listUser.css'
 export default function ListUser(props) {
-  const css = { display: 'block', margin: '0 auto', borderColor: 'blue' }
   const data = useSelector((state) => state.users.data)
   const requesting = useSelector((state) => state.users.requesting)
   const dispatch = useDispatch()
@@ -25,16 +24,12 @@ export default function ListUser(props) {
       <Container>
         <Form>
           <Form.Row>
-            <Form.Control
-              type="text"
-              placeholder="Search"
-              style={{ marginRight: 10 }}
-            />
+            <Form.Control type="text" placeholder="Search" />
             <Button type="submit"> Search</Button>
           </Form.Row>
         </Form>
         {requesting ? (
-          <ClipLoader color={'#000000'} loading={true} css={css} size={150} />
+          <ClipLoader loading={true} size={150} />
         ) : data && data.length > 0 ? (
           <Table>
             <thead>
@@ -71,7 +66,7 @@ export default function ListUser(props) {
             </tbody>
           </Table>
         ) : (
-          <h2 css={css}>Data empty</h2>
+          <h2>Data empty</h2>
         )}
       </Container>
     </>

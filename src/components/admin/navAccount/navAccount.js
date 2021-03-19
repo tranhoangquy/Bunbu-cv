@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter as router, Link, Swich, Route } from 'react-router-dom'
 import { Navbar } from 'react-bootstrap'
-import Nav from '../nav'
+import Nav from '../nav/nav'
+import './navAccount.css'
 export default function Navaccount(props) {
   return (
     <>

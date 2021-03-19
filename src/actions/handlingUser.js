@@ -27,16 +27,16 @@ export const loadUser = () => {
 }
 
 //------------Add theme User----
-export const addUser = ({ valuesform }) => {
+export const addUser = ({ valuesForm }) => {
   return (dispatch) => {
     axios
-      .post('/users', valuesform)
+      .post('/users', valuesForm)
       .then(dispatch({ type: ADD_USER_REQUEST }))
       .then((reponse) => {
         const user = reponse.data
         dispatch({
           type: ADD_USER_SUCCESS,
-          data: { ...user, ...valuesform },
+          data: { ...user, ...valuesForm },
         })
       })
       .catch((error) => {

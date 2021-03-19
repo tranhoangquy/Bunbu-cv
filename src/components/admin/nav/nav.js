@@ -1,13 +1,14 @@
 import Recat, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { SplitButton } from 'react-bootstrap'
-import bunbu from '../../assets/logo.png'
+import bunbu from '../../../assets/logo.png'
+import './nav.css'
 export default function Nav(props) {
   return (
     <>
       <nav className="navbar navbar-expand navbar-light fixed-top">
         <Link to={'admin'} className="navbar-brand">
-          <img src={bunbu} style={{ height: '55px' }} />
+          <img src={bunbu} />
         </Link>
         <ul className="navbar-nav ">
           <li className="nav-item">
@@ -31,8 +32,8 @@ export default function Nav(props) {
             id="dropdown-split-varirants-Outline-primary"
             title="User"
           >
-            <dl style={{ textAlign: 'center' }}>
-              <dt style={{ marginBottom: 10 }}>
+            <dl>
+              <dt>
                 <Link to="/profileadmin">profile</Link>
               </dt>
               <dt>
@@ -42,7 +43,7 @@ export default function Nav(props) {
                   //     props.changeStatusLogin(false)
                   // }
                 >
-                  log out
+                  Log out
                 </Link>
               </dt>
             </dl>

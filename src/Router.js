@@ -1,9 +1,9 @@
 import React from 'react'
-import HomeAdmin from './components/admin/homeAdmin'
+import HomeAdmin from './components/admin/homeAdmin/homeAdmin'
 import Template from './components/admin/template/template'
-import Navaccount from './components/admin/account/nav-account'
-import ListUser from './components/admin/account/listUser'
-import AddUser from './components/admin/account/addUser'
+import Navaccount from './components/admin/navAccount/navAccount'
+import ListUser from './components/admin/account/listUser/listUser'
+import AddUser from './components/admin/account/addUser/addUser'
 
 const route = [
   {

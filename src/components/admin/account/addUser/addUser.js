@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import { Row, Col, Form, Button } from 'react-bootstrap'
-import Nav from '../nav'
-import Navaccount from './nav-account'
+import Nav from '../../nav/nav'
+import Navaccount from '../../navAccount/navAccount'
 import { useSelector, useDispatch } from 'react-redux'
-import { addUser } from '../../../actions/handlingUser'
+import { addUser } from '../../../../actions/handlingUser'
+import { email, phonenumber, password } from '../../../../pattern'
+import './addUser.css'
 export default function AddUser() {
   const data = useSelector((state) => state.users.data)
   const requesting = useSelector((state) => state.users.requesting)
   const dispatch = useDispatch()
-  const [valuesform, setValuesform] = useState({
+  const [valuesForm, setValuesForm] = useState({
     name: '',
     email: '',
     sex: '',
@@ -19,17 +21,17 @@ export default function AddUser() {
     password: '',
   })
 
-  const handlevalue = (e) => {
+  const handleValue = (e) => {
     const { name, value } = e.target
-    setValuesform((prevState) => ({
+    setValuesForm((prevState) => ({
       ...prevState,
       [name]: value,
     }))
   }
 
-  const handlesubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(addUser({ valuesform }))
+    dispatch(addUser({ valuesForm }))
   }
   return (
     <>
@@ -38,11 +40,7 @@ export default function AddUser() {
       <div>
         <h2 style={{ textAlign: 'center' }}>Add Account</h2>
       </div>
-      <Form
-        onSubmit={handlesubmit}
-        className="form-addacc"
-        style={{ maxWidth: '500px', margin: 'auto' }}
-      >
+      <Form onSubmit={handleSubmit} className="form-addacc">
         <Form.Group controlId="validationCustom01">
           <Row sm="13">
             <Col sm="3">
@@ -54,9 +52,9 @@ export default function AddUser() {
                 type="text"
                 placeholder="Enter full name"
                 name="name"
-                value={valuesform.name}
-                onChange={handlevalue}
-                required="true"
+                value={valuesForm.name}
+                onChange={handleValue}
+                required={'true'}
               />
             </Col>
           </Row>
@@ -69,10 +67,10 @@ export default function AddUser() {
                 type="email"
                 placeholder="Enter email"
                 name="email"
-                value={valuesform.email}
-                onChange={handlevalue}
-                required="true"
-                pattern="^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$"
+                value={valuesForm.email}
+                onChange={handleValue}
+                required={'true'}
+                pattern={email}
                 title="Email address is invalid"
               />
             </Col>
@@ -85,18 +83,18 @@ export default function AddUser() {
             </Col>
 
             <Col
+              className="sex"
               sm="10"
-              style={{ display: 'flex' }}
               name="sex"
-              value={valuesform.sex}
-              onChange={handlevalue}
+              value={valuesForm.sex}
+              onChange={handleValue}
             >
               <input
                 type="radio"
                 id="male"
                 value="male"
                 name="sex"
-                required="true"
+                required={'true'}
               />
               Male
               <input
@@ -104,7 +102,7 @@ export default function AddUser() {
                 id="female"
                 value="female"
                 name="sex"
-                required="true"
+                required={'true'}
               />
               Female
             </Col>
@@ -118,11 +116,11 @@ export default function AddUser() {
                 type="tel"
                 placeholder="Enter phone number"
                 name="phonemumber"
-                required="true"
-                pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b"
+                required={'true'}
+                pattern={phonenumber}
                 title="Phonenumber is invalid and 10 numbers"
-                value={valuesform.phonemumber}
-                onChange={handlevalue}
+                value={valuesForm.phonemumber}
+                onChange={handleValue}
               />
             </Col>
           </Row>
@@ -138,8 +136,8 @@ export default function AddUser() {
                 type="text"
                 placeholder="Enter Address"
                 name="address"
-                value={valuesform.address}
-                onChange={handlevalue}
+                value={valuesForm.address}
+                onChange={handleValue}
               />
             </Col>
           </Row>
@@ -151,9 +149,9 @@ export default function AddUser() {
               <Form.Control
                 as="select"
                 name="role"
-                value={valuesform.role}
-                onChange={handlevalue}
-                required="true"
+                value={valuesForm.role}
+                onChange={handleValue}
+                required={'true'}
               >
                 <option>Admin</option>
                 <option>User</option>
@@ -171,9 +169,9 @@ export default function AddUser() {
               <Form.Control
                 type="date"
                 name="dateofbirth"
-                value={valuesform.dateofbirth}
-                onChange={handlevalue}
-                required="true"
+                value={valuesForm.dateofbirth}
+                onChange={handleValue}
+                required={'true'}
               />
             </Col>
           </Row>
@@ -187,10 +185,10 @@ export default function AddUser() {
                 type="text"
                 placeholder="Enter Password"
                 name="password"
-                value={valuesform.password}
-                onChange={handlevalue}
-                required="true"
-                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                value={valuesForm.password}
+                onChange={handleValue}
+                required={'true'}
+                pattern={password}
                 title="Password minimum 8 characters, at least one letter and a number"
               />
             </Col>
