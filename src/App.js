@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import SignUp from './components/register/register'
 import ForgotPassword from './components/forgotPassword/forgotPassword'
 import Login from './components/login/login'
-import HomeAdmin from './components/admin/homeAdmin/homeAdmin'
 function App() {
   const showScreen = (routes) => {
     const result = routes.map((route, index) => {
