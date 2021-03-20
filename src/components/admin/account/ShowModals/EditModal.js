@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { AiFillEdit } from 'react-icons/ai'
 import { Row, Col, Form, Button, Container, Modal } from 'react-bootstrap'
 import { email, password, phonenumber } from '../../../../pattern'
+import { loadUser, updateUser } from '../../../../actions/handlingUser'
+import { useSelector, useDispatch } from 'react-redux'
 export default function EditModal(props) {
   const [showEditModal, setShowEditModal] = useState(false)
   const [valuesForm, setValuesForm] = useState({
@@ -14,6 +16,9 @@ export default function EditModal(props) {
     dateofbirth: '',
     password: '',
   })
+  const data = useSelector((state) => state.users.data)
+  const requesting = useSelector((state) => state.users.requesting)
+  const dispatch = useDispatch()
   const handleValue = (e) => {
     const { name, value } = e.target
     setValuesForm((prevState) => ({
@@ -23,12 +28,13 @@ export default function EditModal(props) {
   }
   const handleSubmitEdit = (e) => {
     e.preventDefault()
-    console.log(valuesForm)
+    dispatch(updateUser(props.id, valuesForm))
+    dispatch(loadUser())
   }
   return (
     <>
       <AiFillEdit onClick={() => setShowEditModal(true)}></AiFillEdit>
-      <Modal show={showEditModal}>
+      <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
         <Modal.Header>
           <Modal.Title>{props.name}</Modal.Title>
         </Modal.Header>
