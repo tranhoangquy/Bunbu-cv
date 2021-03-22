@@ -1,3 +1,4 @@
+import { data } from 'jquery'
 import {
   PAGE_REQUEST,
   FETCH_USERS_SUCCESS,
@@ -73,9 +74,6 @@ const userReducer = (state = initialState, actions) => {
         message: actions.message,
       }
     case PUT_USER_SUCCESS:
-      const updateUser = state.data.filter(
-        (user) => user.id == actions.payload.id
-      )
       return {
         ...state,
         requesting: false,

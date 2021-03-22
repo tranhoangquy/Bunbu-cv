@@ -71,6 +71,7 @@ export const updateUser = (id, valuesForm) => {
       .then(dispatch({ type: PAGE_REQUEST }))
 
       .then((reponse) => {
+        console.log(reponse)
         dispatch({
           type: PUT_USER_SUCCESS,
           payload: { id: id },
