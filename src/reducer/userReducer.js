@@ -7,6 +7,8 @@ import {
   ADD_USER_ERROR,
   DELETE_USER_SUCCESS,
   DELETE_USER_ERROR,
+  PUT_USER_SUCCESS,
+  PUT_USER_ERROR,
 } from '../constants/index'
 
 const initialState = {
@@ -64,6 +66,22 @@ const userReducer = (state = initialState, actions) => {
         data: filteredUsers,
       }
     case DELETE_USER_ERROR:
+      return {
+        ...state,
+        requesting: false,
+        success: false,
+        message: actions.message,
+      }
+    case PUT_USER_SUCCESS:
+      const updateUser = state.data.filter(
+        (user) => user.id == actions.payload.id
+      )
+      return {
+        ...state,
+        requesting: false,
+        data: [state.data, actions.data],
+      }
+    case PUT_USER_ERROR:
       return {
         ...state,
         requesting: false,
