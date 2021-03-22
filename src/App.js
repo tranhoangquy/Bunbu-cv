@@ -6,6 +6,19 @@ import SignUp from './components/register/register'
 import ForgotPassword from './components/forgotPassword/forgotPassword'
 import Login from './components/login/login'
 function App() {
+  const showScreen = (routes) => {
+    const result = routes.map((route, index) => {
+      return (
+        <Route
+          key={index}
+          path={route.path}
+          exact={route.exact}
+          component={route.main}
+        />
+      )
+    })
+    return <Switch>{result}</Switch>
+  }
   return (
     <div className="App">
       <Router>
@@ -18,6 +31,7 @@ function App() {
           ></Route>
           <Route exact path="/" component={Login}></Route>
         </Switch>
+        {showScreen(routes)}
       </Router>
     </div>
   )
