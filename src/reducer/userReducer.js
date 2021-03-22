@@ -74,11 +74,13 @@ const userReducer = (state = initialState, actions) => {
         message: actions.message,
       }
     case PUT_USER_SUCCESS:
+      const timkiem = state.data.filter((e) => e.id !== actions.payload.id)
       return {
         ...state,
         requesting: false,
-        data: [state.data, actions.data],
+        data: [...timkiem, actions.data],
       }
+
     case PUT_USER_ERROR:
       return {
         ...state,
