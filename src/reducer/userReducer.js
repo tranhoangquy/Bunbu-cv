@@ -1,3 +1,4 @@
+import { data } from 'jquery'
 import {
   PAGE_REQUEST,
   FETCH_USERS_SUCCESS,
@@ -7,6 +8,8 @@ import {
   ADD_USER_ERROR,
   DELETE_USER_SUCCESS,
   DELETE_USER_ERROR,
+  PUT_USER_SUCCESS,
+  PUT_USER_ERROR,
 } from '../constants/index'
 
 const initialState = {
@@ -64,6 +67,21 @@ const userReducer = (state = initialState, actions) => {
         data: filteredUsers,
       }
     case DELETE_USER_ERROR:
+      return {
+        ...state,
+        requesting: false,
+        success: false,
+        message: actions.message,
+      }
+    case PUT_USER_SUCCESS:
+      const timkiem = state.data.filter((e) => e.id !== actions.payload.id)
+      return {
+        ...state,
+        requesting: false,
+        data: [...timkiem, actions.data],
+      }
+
+    case PUT_USER_ERROR:
       return {
         ...state,
         requesting: false,

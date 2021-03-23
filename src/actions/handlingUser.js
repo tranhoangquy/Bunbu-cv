@@ -7,6 +7,8 @@ import {
   ADD_USER_REQUEST,
   DELETE_USER_ERROR,
   DELETE_USER_SUCCESS,
+  PUT_USER_SUCCESS,
+  PUT_USER_ERROR,
 } from '../constants/index.js'
 import axios from './axios'
 
@@ -59,6 +61,25 @@ export const deleteUser = (id) => {
           type: DELETE_USER_ERROR,
           message: error,
         })
+      })
+  }
+}
+export const updateUser = (id, valuesForm) => {
+  return (dispatch) => {
+    axios
+      .put(`/users/${id}`, valuesForm)
+      .then(dispatch({ type: PAGE_REQUEST }))
+
+      .then((reponse) => {
+        console.log(reponse)
+        dispatch({
+          type: PUT_USER_SUCCESS,
+          payload: { id: id },
+          data: { ...reponse.data, ...valuesForm },
+        })
+      })
+      .catch((error) => {
+        dispatch({ type: PUT_USER_ERROR, message: error })
       })
   }
 }
