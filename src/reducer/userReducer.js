@@ -10,6 +10,7 @@ import {
   DELETE_USER_ERROR,
   PUT_USER_SUCCESS,
   PUT_USER_ERROR,
+  SEARCH_USER_SUCCESS,
 } from '../constants/index'
 
 const initialState = {
@@ -17,6 +18,7 @@ const initialState = {
   success: false,
   message: null,
   data: null,
+  timkiem: null,
 }
 const userReducer = (state = initialState, actions) => {
   switch (actions.type) {
@@ -87,6 +89,13 @@ const userReducer = (state = initialState, actions) => {
         requesting: false,
         success: false,
         message: actions.message,
+      }
+    case SEARCH_USER_SUCCESS:
+      return {
+        ...state,
+        requesting: false,
+        valuseSearch: actions.payload.valuseSearch,
+        data: actions.payload.items,
       }
     default:
       return state
