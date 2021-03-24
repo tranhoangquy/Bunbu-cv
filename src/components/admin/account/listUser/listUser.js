@@ -14,7 +14,8 @@ export default function ListUser(props) {
   const requesting = useSelector((state) => state.users.requesting)
   const dispatch = useDispatch()
   const [valueSearch, setValueSearch] = useState('')
-  const searchListUser = () => {
+  const searchListUser = (e) => {
+    e.preventDefault()
     dispatch(searchUser(props.name, valueSearch))
   }
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function ListUser(props) {
 
       <Navaccount />
       <Container>
-        <Form>
+        <Form onSubmit={searchListUser}>
           <Form.Row>
             <Form.Control
               type="text"
@@ -36,7 +37,7 @@ export default function ListUser(props) {
                 setValueSearch(e.target.value)
               }}
             />
-            <Button onClick={searchListUser}> Search</Button>
+            <Button type="submit"> Search</Button>
           </Form.Row>
         </Form>
         {requesting ? (
