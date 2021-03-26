@@ -6,6 +6,7 @@ import SignUp from './components/register/register'
 import ForgotPassword from './components/forgotPassword/forgotPassword'
 import Login from './components/login/login'
 function App() {
+  const _ = require('lodash')
   const showScreen = (routes) => {
     const result = routes.map((route, index) => {
       return (

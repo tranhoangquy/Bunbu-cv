@@ -15,6 +15,7 @@
         "i18next-browser-languagedetector": "^6.0.1",
         "i18next-xhr-backend": "^3.2.2",
         "jquery": "^3.5.1",
+        "lodash": "^4.17.21",
         "popper.js": "^1.16.1",
         "react": "^17.0.1",
         "react-bootstrap": "^1.4.3",
@@ -58,5 +59,7 @@
             "last 1 safari version"
         ]
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "eslint-plugin-you-dont-need-lodash-underscore": "^6.11.0"
+    }
 }
