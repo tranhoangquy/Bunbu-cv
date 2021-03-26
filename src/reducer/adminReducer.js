@@ -21,7 +21,7 @@ const initialState = {
   message: null,
   data: null,
 }
-const userReducer = (state = initialState, actions) => {
+const adminReducer = (state = initialState, actions) => {
   switch (actions.type) {
     case PAGE_REQUEST:
       return {
@@ -115,4 +115,4 @@ const userReducer = (state = initialState, actions) => {
       return state
   }
 }
-export default userReducer
+export default adminReducer

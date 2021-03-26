@@ -4,7 +4,7 @@ import Template from './components/admin/template/template'
 import Navaccount from './components/admin/navAccount/navAccount'
 import ListUser from './components/admin/account/listUser/listUser'
 import AddUser from './components/admin/account/addUser/addUser'
-
+import ProfileAdmin from './components/admin/profileAdmin/profileAdmin/profileAdmin'
 const route = [
   {
     path: '/admin',
@@ -30,6 +30,11 @@ const route = [
     path: '/users/new',
     exact: true,
     main: () => <AddUser />,
+  },
+  {
+    path: '/profileadmin',
+    exact: false,
+    main: () => <ProfileAdmin />,
   },
 ]
 export default route
