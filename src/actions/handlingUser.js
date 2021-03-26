@@ -9,6 +9,8 @@ import {
   DELETE_USER_SUCCESS,
   PUT_USER_SUCCESS,
   PUT_USER_ERROR,
+  SORT_USER_BY_ROLE,
+  SORT_USER_BY_ROLE_ERROR,
   SEARCH_USER_SUCCESS,
 } from '../constants/index.js'
 import axios from './axios'
@@ -84,6 +86,21 @@ export const updateUser = (id, valuesForm) => {
   }
 }
 
+export const sortUserByRole = (name) => {
+  return (dispatch) => {
+    axios
+      .get('/users')
+      .then((response) => {
+        dispatch({
+          type: SORT_USER_BY_ROLE,
+          data: { ...response.data },
+        })
+      })
+      .catch((error) => {
+        dispatch({ type: SORT_USER_BY_ROLE_ERROR, message: error })
+      })
+  }
+}
 export const searchUser = (users, valueSearch) => {
   return (dispatch) => {
     axios

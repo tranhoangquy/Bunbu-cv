@@ -10,6 +10,8 @@ import {
   DELETE_USER_ERROR,
   PUT_USER_SUCCESS,
   PUT_USER_ERROR,
+  SORT_USER_BY_ROLE,
+  SORT_USER_BY_ROLE_ERROR,
   SEARCH_USER_SUCCESS,
 } from '../constants/index'
 
@@ -83,6 +85,19 @@ const userReducer = (state = initialState, actions) => {
       }
 
     case PUT_USER_ERROR:
+      return {
+        ...state,
+        requesting: false,
+        success: false,
+        message: actions.message,
+      }
+    case SORT_USER_BY_ROLE:
+      const sorted = _.orderBy(actions.data, ['type', 'role'], ['desc'])
+      return {
+        ...state,
+        data: [...sorted],
+      }
+    case SORT_USER_BY_ROLE_ERROR:
       return {
         ...state,
         requesting: false,

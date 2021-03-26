@@ -6,14 +6,22 @@ import Navaccount from '../../navAccount/navAccount'
 import { useSelector, useDispatch } from 'react-redux'
 import DeleteModal from '../ShowModals/DeleteModal'
 import EditModal from '../ShowModals/EditModal'
-import { loadUser, searchUser } from '../../../../actions/handlingUser'
+import {
+  loadUser,
+  sortUserByRole,
+  searchUser,
+} from '../../../../actions/handlingUser'
 import ClipLoader from 'react-spinners/ClipLoader'
+import sortIcon from '../../../../assets/sort.png'
 import './listUser.css'
 export default function ListUser(props) {
   const data = useSelector((state) => state.users.data)
   const requesting = useSelector((state) => state.users.requesting)
   const dispatch = useDispatch()
   const [valueSearch, setValueSearch] = useState('')
+  const sortRole = () => {
+    dispatch(sortUserByRole())
+  }
   const searchListUser = (e) => {
     e.preventDefault()
     dispatch(searchUser(props.name, valueSearch))
@@ -21,7 +29,6 @@ export default function ListUser(props) {
   useEffect(() => {
     dispatch(loadUser())
   }, [])
-
   return (
     <>
       <Nav />
@@ -49,7 +56,15 @@ export default function ListUser(props) {
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Role</th>
+                <th>
+                  Role
+                  <img
+                    src={sortIcon}
+                    key={sortIcon}
+                    className="iconSort"
+                    onClick={sortRole}
+                  />
+                </th>
                 <th>Ngày sinh</th>
                 <th>Delete</th>
                 <th>Edit</th>
