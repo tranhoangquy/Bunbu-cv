@@ -9,6 +9,7 @@ import {
   DELETE_USER_SUCCESS,
   PUT_USER_SUCCESS,
   PUT_USER_ERROR,
+  SEARCH_USER_SUCCESS,
 } from '../constants/index.js'
 import axios from './axios'
 
@@ -71,7 +72,6 @@ export const updateUser = (id, valuesForm) => {
       .then(dispatch({ type: PAGE_REQUEST }))
 
       .then((reponse) => {
-        console.log(reponse)
         dispatch({
           type: PUT_USER_SUCCESS,
           payload: { id: id },
@@ -80,6 +80,32 @@ export const updateUser = (id, valuesForm) => {
       })
       .catch((error) => {
         dispatch({ type: PUT_USER_ERROR, message: error })
+      })
+  }
+}
+
+export const searchUser = (users, valueSearch) => {
+  return (dispatch) => {
+    axios
+      .get('/users')
+      .then(dispatch({ type: PAGE_REQUEST }))
+      .then((reponse) => {
+        dispatch({
+          type: SEARCH_USER_SUCCESS,
+
+          payload: {
+            valueSearch: valueSearch,
+            items:
+              valueSearch === ''
+                ? reponse.data
+                : reponse.data.filter(
+                    (x) =>
+                      x['name']
+                        .toLowerCase()
+                        .indexOf(valueSearch.toLowerCase()) >= 0
+                  ),
+          },
+        })
       })
   }
 }
