@@ -91,7 +91,7 @@ const userReducer = (state = initialState, actions) => {
         message: actions.message,
       }
     case SORT_USER_BY_ROLE:
-      let sorted = _.orderBy(actions.data, ['type', 'role'], ['desc'])
+      const sorted = _.orderBy(actions.data, ['type', 'role'], ['desc'])
       return {
         ...state,
         data: [...sorted],
