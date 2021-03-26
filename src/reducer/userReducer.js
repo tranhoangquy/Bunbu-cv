@@ -12,6 +12,7 @@ import {
   PUT_USER_ERROR,
   SORT_USER_BY_ROLE,
   SORT_USER_BY_ROLE_ERROR,
+  SEARCH_USER_SUCCESS,
 } from '../constants/index'
 
 const initialState = {
@@ -102,6 +103,13 @@ const userReducer = (state = initialState, actions) => {
         requesting: false,
         success: false,
         message: actions.message,
+      }
+    case SEARCH_USER_SUCCESS:
+      return {
+        ...state,
+        requesting: false,
+        valueSearch: actions.payload.valueSearch,
+        data: actions.payload.items,
       }
     default:
       return state

@@ -11,6 +11,7 @@ import {
   PUT_USER_ERROR,
   SORT_USER_BY_ROLE,
   SORT_USER_BY_ROLE_ERROR,
+  SEARCH_USER_SUCCESS,
 } from '../constants/index.js'
 import axios from './axios'
 
@@ -97,6 +98,31 @@ export const sortUserByRole = (name) => {
       })
       .catch((error) => {
         dispatch({ type: SORT_USER_BY_ROLE_ERROR, message: error })
+      })
+  }
+}
+export const searchUser = (users, valueSearch) => {
+  return (dispatch) => {
+    axios
+      .get('/users')
+      .then(dispatch({ type: PAGE_REQUEST }))
+      .then((reponse) => {
+        dispatch({
+          type: SEARCH_USER_SUCCESS,
+
+          payload: {
+            valueSearch: valueSearch,
+            items:
+              valueSearch === ''
+                ? reponse.data
+                : reponse.data.filter(
+                    (x) =>
+                      x['name']
+                        .toLowerCase()
+                        .indexOf(valueSearch.toLowerCase()) >= 0
+                  ),
+          },
+        })
       })
   }
 }

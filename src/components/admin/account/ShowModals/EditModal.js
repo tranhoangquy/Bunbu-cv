@@ -26,14 +26,9 @@ export default function EditModal(props) {
       [name]: value,
     }))
   }
-  // const request = () => {
-  //   if (requesting === false) {
-  //     dispatch(loadUser())
-  //   }
-  // }
+
   const handleSubmitEdit = (e) => {
     dispatch(updateUser(props.id, valuesForm))
-    // request()
   }
   return (
     <>
