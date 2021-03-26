@@ -13,6 +13,8 @@ import {
   SORT_USER_BY_ROLE,
   SORT_USER_BY_ROLE_ERROR,
   SEARCH_USER_SUCCESS,
+  FETCH_PROFILE_SUCCESS,
+  FETCH_PROFILE_ERROR,
 } from '../constants/index'
 
 const initialState = {
@@ -110,6 +112,25 @@ const adminReducer = (state = initialState, actions) => {
         requesting: false,
         valueSearch: actions.payload.valueSearch,
         data: actions.payload.items,
+      }
+    case PAGE_REQUEST:
+      return {
+        ...state,
+        requesting: true,
+      }
+    case FETCH_PROFILE_SUCCESS:
+      return {
+        ...state,
+        success: true,
+        requesting: false,
+        data: actions.profile,
+      }
+    case FETCH_PROFILE_ERROR:
+      return {
+        ...state,
+        requesting: false,
+        success: false,
+        message: actions.message,
       }
     default:
       return state

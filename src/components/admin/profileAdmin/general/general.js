@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Row, Button, Col } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchProfile } from '../../../../actions/handlingUser'
+
 import './general.css'
 export default function General(props) {
+  const data = useSelector((state) => state.users.data)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchProfile())
+  }, [])
   return (
     <Container
       className="container-general"
@@ -23,13 +31,13 @@ export default function General(props) {
             <p>Name:</p>
           </Col>
           <Col sm={4}>
-            <p>name profile</p>
+            <p>{data.name}</p>
           </Col>
           <Col sm={2}>
             <p>Email:</p>
           </Col>
           <Col sm={4}>
-            <p>email profile</p>
+            <p>{data.email}</p>
           </Col>
         </Row>
         <Row>
@@ -37,13 +45,13 @@ export default function General(props) {
             <p>Gender:</p>
           </Col>
           <Col sm={4}>
-            <p>Name</p>
+            <p>{data.sex}</p>
           </Col>
           <Col sm={2}>
             <p>Phone:</p>
           </Col>
           <Col sm={4}>
-            <p>0123456789</p>
+            <p>{data.phonenumber}</p>
           </Col>
         </Row>
         <Row>
@@ -51,13 +59,13 @@ export default function General(props) {
             <p>Birth day:</p>
           </Col>
           <Col sm={4}>
-            <p>22/10/1998</p>
+            <p>{data.dateofbirth}</p>
           </Col>
           <Col sm={2}>
             <p>Address:</p>
           </Col>
           <Col sm={4}>
-            <p>Ha Noi</p>
+            <p>{data.address}</p>
           </Col>
         </Row>
       </Container>
