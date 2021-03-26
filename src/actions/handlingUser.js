@@ -84,7 +84,7 @@ export const updateUser = (id, valuesForm) => {
   }
 }
 
-export const searchUser = (users, valuseSearch) => {
+export const searchUser = (users, valueSearch) => {
   return (dispatch) => {
     axios
       .get('/users')
@@ -94,15 +94,15 @@ export const searchUser = (users, valuseSearch) => {
           type: SEARCH_USER_SUCCESS,
 
           payload: {
-            valuseSearch: valuseSearch,
+            valueSearch: valueSearch,
             items:
-              valuseSearch === ''
+              valueSearch === ''
                 ? reponse.data
                 : reponse.data.filter(
                     (x) =>
                       x['name']
                         .toLowerCase()
-                        .indexOf(valuseSearch.toLowerCase()) >= 0
+                        .indexOf(valueSearch.toLowerCase()) >= 0
                   ),
           },
         })

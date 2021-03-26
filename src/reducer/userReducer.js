@@ -18,7 +18,6 @@ const initialState = {
   success: false,
   message: null,
   data: null,
-  timkiem: null,
 }
 const userReducer = (state = initialState, actions) => {
   switch (actions.type) {
@@ -94,7 +93,7 @@ const userReducer = (state = initialState, actions) => {
       return {
         ...state,
         requesting: false,
-        valuseSearch: actions.payload.valuseSearch,
+        valueSearch: actions.payload.valueSearch,
         data: actions.payload.items,
       }
     default:
