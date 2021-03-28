@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { Container, Row, Button, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProfile } from '../../../../actions/handlingUser'
-
 import './general.css'
 export default function General(props) {
   const data = useSelector((state) => state.users.data)
