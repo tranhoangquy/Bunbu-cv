@@ -1,0 +1,39 @@
+#avatar {
+    height: 150px;
+    width: 150px;
+  }
+  #container {
+    max-width: 950px;
+    margin: 90px auto;
+  }
+  .personal-information {
+  }
+  .personal-information input {
+    border: none;
+  }
+  .personal-information .row-cols-sm-3 input {
+    height: 15px;
+    margin-top: 5px;
+  }
+  .group-content {
+    margin-top: 15px;
+    padding-left: 7%;
+  }
+  .content-title {
+    border-bottom: 1px solid;
+    width: 100%;
+  }
+  .content {
+    margin-top: 5px;
+    width: 100%;
+  }
+  .content textarea {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: auto;
+    font-size: 12px;
+    border-radius: 14px 14px;
+    outline: none;
+  }
