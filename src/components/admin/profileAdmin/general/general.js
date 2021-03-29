@@ -1,15 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useMemo } from 'react'
 import { Container, Row, Button, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProfile } from '../../../../actions/handlingUser'
+import ClipLoader from 'react-spinners/ClipLoader'
 import './general.css'
 export default function General(props) {
   const data = useSelector((state) => state.users.data)
   const dispatch = useDispatch()
+	const requesting = useSelector((state) => state.users.requesting)
   useEffect(() => {
     dispatch(fetchProfile())
   }, [])
+	
   return (
+
+		
     <Container
       className="container-general"
       style={{
@@ -19,13 +24,18 @@ export default function General(props) {
       <Row>
         <p className="general-profile">General Account Setting</p>
       </Row>
+			{requesting ? (
+          <ClipLoader loading={true} size={150} />
+        ) : !!data? (
       <Container>
         <Row>
           <Col>
             <p>Private information</p>
           </Col>
         </Row>
+                  
         <Row>
+
           <Col sm={2}>
             <p>Name:</p>
           </Col>
@@ -66,8 +76,13 @@ export default function General(props) {
           <Col sm={4}>
             <p>{data.address}</p>
           </Col>
+        
         </Row>
+       
       </Container>
+				):(
+          <h2>Data empty</h2>
+        )}
     </Container>
   )
 }

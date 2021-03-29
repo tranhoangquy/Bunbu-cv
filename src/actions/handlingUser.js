@@ -141,7 +141,7 @@ export const fetchProfile = () => {
       .get('/profile')
       .then(dispatch({ type: PAGE_REQUEST }))
       .then((response) => {
-        dispatch({ type: FETCH_PROFILE_SUCCESS, profile: { ...response.data } })
+        dispatch({ type: FETCH_PROFILE_SUCCESS, profile:response.data })
       })
       .catch((error) => {
         dispatch({ type: FETCH_PROFILE_ERROR, message: error })
