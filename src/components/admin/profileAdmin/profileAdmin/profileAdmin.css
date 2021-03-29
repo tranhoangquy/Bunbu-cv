@@ -1,0 +1,43 @@
+.container-profile {
+  display: flex;
+  margin: 10% 3%;
+}
+.left-sidebar {
+  width: 22%;
+  height: auto;
+}
+.left-sidebar .container {
+  background: #f2f2f2;
+}
+.left-sidebar .container .row {
+  padding: 10px 10px;
+  margin-bottom: 15px;
+}
+.left-sidebar .container .left-sidebar-btn {
+  border: 1px solid #e0e0e0;
+  padding: 40px 20px;
+  margin-bottom: 10px;
+}
+.btn-general {
+  border: solid 1px #e0e0e0;
+  margin-bottom: 5px;
+  width: 100%;
+  background: #f2f2f2;
+  color: #151313;
+  text-align: left;
+  box-shadow: none;
+}
+.btn-changepassword {
+  border: solid 1px #e0e0e0;
+  margin-bottom: 5px;
+  width: 100%;
+  background: #f2f2f2;
+  color: #151313;
+  text-align: left;
+  padding: 20x 20px;
+  box-shadow: none;
+}
+.left-sidebar img {
+  height: 40px;
+  width: 40px;
+}
