@@ -1,9 +1,97 @@
 {
-    "parserOptions": {
-        "ecmaVersion": 2017
+    "plugins": [
+        "react"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+        "indent": [
+            2,
+            2,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "linebreak-style": [
+            2,
+            "unix"
+        ],
+        "quotes": [
+            2,
+            "single"
+        ],
+        "semi": [
+            2,
+            "always"
+        ],
+        "curly": [
+            2,
+            "all"
+        ],
+        "camelcase": [
+            2,
+            {
+                "properties": "always"
+            }
+        ],
+        "eqeqeq": [
+            2,
+            "smart"
+        ],
+        "one-var-declaration-per-line": [
+            2,
+            "always"
+        ],
+        "new-cap": 2,
+        "no-case-declarations": 0,
+        "interface-name": [true, "never-prefix"],
+        "jsx-boolean-value": [true, "never"],
+        "max-line-length": [true, 120],
+        "no-boolean-literal-compare": true,
+        "no-console": false,
+        "no-empty": false,
+        "object-literal-sort-keys": false,
+        "object-shorthand-properties-first": false,
+        "ordered-imports": [
+            true,
+            {
+                "import-sources-order": "any",
+                "named-imports-order": "case-insensitive"
+            }
+        ],
+        "prefer-template": true,
+        "prettier": [
+            true,
+            {
+                "printWidth": 120,
+                "tabWidth": 1,
+                "useTabs": false,
+                "singleQuote": true,
+                "arrowParens": "avoid",
+                "semi": false,
+                "trailingComma": "all",
+                "bracketSpacing": true,
+                "jsxBracketSameLine": false
+            }
+        ],
+        "variable-name": [true, "ban-keywords", "check-format"],
+        "prettier/prettier": "error",
+        "@typescript-eslint/indent": ["error", 1]
     },
-
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
     "env": {
+        "browser": true,
         "es6": true
+    },
+    "globals": {
+        "arguments": true
     }
 }
