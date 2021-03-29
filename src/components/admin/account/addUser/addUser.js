@@ -3,7 +3,7 @@ import { Row, Col, Form, Button } from 'react-bootstrap'
 import Nav from '../../nav/nav'
 import Navaccount from '../../navAccount/navAccount'
 import { useSelector, useDispatch } from 'react-redux'
-import { addUser } from '../../../../actions/handlingUser'
+import { addUser } from '../../../../actions/handlingAdmin'
 import { email, phonenumber, password } from '../../../../pattern'
 import './addUser.css'
 export default function AddUser() {

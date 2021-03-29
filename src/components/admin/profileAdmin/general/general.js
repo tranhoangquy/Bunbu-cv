@@ -1,7 +1,7 @@
 import React, { useEffect,useMemo } from 'react'
 import { Container, Row, Button, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProfile } from '../../../../actions/handlingUser'
+import { fetchProfile } from '../../../../actions/handlingAdmin'
 import ClipLoader from 'react-spinners/ClipLoader'
 import './general.css'
 export default function General(props) {
