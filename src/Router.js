@@ -8,7 +8,7 @@ import ProfileAdmin from './components/admin/profileAdmin/profileAdmin/profileAd
 const route = [
   {
     path: '/admin',
-    exact: false,
+    exact: true,
     main: () => <HomeAdmin />,
   },
   {
@@ -32,8 +32,8 @@ const route = [
     main: () => <AddUser />,
   },
   {
-    path: '/profileadmin',
-    exact: false,
+    path: '/admin/profile',
+    exact: true,
     main: () => <ProfileAdmin />,
   },
 ]
