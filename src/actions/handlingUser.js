@@ -12,6 +12,8 @@ import {
   SORT_USER_BY_ROLE,
   SORT_USER_BY_ROLE_ERROR,
   SEARCH_USER_SUCCESS,
+  FETCH_PROFILE_SUCCESS,
+  FETCH_PROFILE_ERROR,
 } from '../constants/index.js'
 import axios from './axios'
 
@@ -67,6 +69,8 @@ export const deleteUser = (id) => {
       })
   }
 }
+
+//-----update User-------
 export const updateUser = (id, valuesForm) => {
   return (dispatch) => {
     axios
@@ -86,6 +90,7 @@ export const updateUser = (id, valuesForm) => {
   }
 }
 
+//----sort by role -------------------
 export const sortUserByRole = (name) => {
   return (dispatch) => {
     axios
@@ -101,6 +106,8 @@ export const sortUserByRole = (name) => {
       })
   }
 }
+
+//------ search by name-----
 export const searchUser = (users, valueSearch) => {
   return (dispatch) => {
     axios
@@ -123,6 +130,21 @@ export const searchUser = (users, valueSearch) => {
                   ),
           },
         })
+      })
+  }
+}
+
+//------fetch profile-----
+export const fetchProfile = () => {
+  return (dispatch) => {
+    axios
+      .get('/profile')
+      .then(dispatch({ type: PAGE_REQUEST }))
+      .then((response) => {
+        dispatch({ type: FETCH_PROFILE_SUCCESS, profile:response.data })
+      })
+      .catch((error) => {
+        dispatch({ type: FETCH_PROFILE_ERROR, message: error })
       })
   }
 }

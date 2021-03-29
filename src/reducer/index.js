@@ -1,7 +1,7 @@
-import userReducer from './userReducer'
+import adminReducer from './adminReducer'
 import { combineReducers } from 'redux'
 
 const reducers = combineReducers({
-  users: userReducer,
+  users: adminReducer,
 })
 export default (state, action) => reducers(state, action)

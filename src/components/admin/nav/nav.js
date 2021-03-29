@@ -34,7 +34,7 @@ export default function Nav(props) {
           >
             <dl>
               <dt>
-                <Link to="/profileadmin">profile</Link>
+                <Link to="/admin/profile">profile</Link>
               </dt>
               <dt>
                 <Link

@@ -4,11 +4,11 @@ import Template from './components/admin/template/template'
 import Navaccount from './components/admin/navAccount/navAccount'
 import ListUser from './components/admin/account/listUser/listUser'
 import AddUser from './components/admin/account/addUser/addUser'
-
+import ProfileAdmin from './components/admin/profileAdmin/profileAdmin/profileAdmin'
 const route = [
   {
     path: '/admin',
-    exact: false,
+    exact: true,
     main: () => <HomeAdmin />,
   },
   {
@@ -30,6 +30,11 @@ const route = [
     path: '/users/new',
     exact: true,
     main: () => <AddUser />,
+  },
+  {
+    path: '/admin/profile',
+    exact: true,
+    main: () => <ProfileAdmin />,
   },
 ]
 export default route

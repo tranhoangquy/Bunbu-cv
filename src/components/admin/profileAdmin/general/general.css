@@ -1,0 +1,19 @@
+.container-general {
+  height: 100%;
+  width: 100%;
+  background: #e0e0e0;
+  margin-left: 20px;
+  padding-right: 20px;
+}
+.general-profile {
+  font-size: 20px;
+  padding-top: 7px;
+  padding-left: 38px;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.container-general .container {
+  background: white;
+  margin-left: 21px;
+  width: 860px;
+}
