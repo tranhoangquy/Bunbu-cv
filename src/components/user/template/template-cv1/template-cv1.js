@@ -23,10 +23,10 @@ export default function TemplateCv1() {
               </Col>
               <Col sm={3}>
                 <Row>
-                  <Form.Control placeholder="Họ Tên" name="name" />
+                  <Form.Control placeholder="Full name" name="name" />
                 </Row>
                 <Row>
-                  <Form.Control placeholder="Vị trí ứng tuyển" />
+                  <Form.Control placeholder="Position Applying" />
                 </Row>
                 <Row sm={3} style={{ marginTop: '10px' }}>
                   <Col sm={1}>
@@ -74,7 +74,7 @@ export default function TemplateCv1() {
           <Container className="group-content">
             <Row>
               <Row className="content-title">
-                <h5>Mục tiêu nghề nghiệp</h5>
+                <h5>Career goals</h5>
               </Row>
               <Row className="content">
                 <TextareaAutosize type="text" />
@@ -82,7 +82,7 @@ export default function TemplateCv1() {
             </Row>
             <Row>
               <Row className="content-title">
-                <h5>Học Vấn</h5>
+                <h5>Education</h5>
               </Row>
               <Row className="content">
                 <TextareaAutosize type="text" />
@@ -90,7 +90,7 @@ export default function TemplateCv1() {
             </Row>
             <Row>
               <Row className="content-title">
-                <h5>Kinh nghiệm làm việc</h5>
+                <h5>Work experience</h5>
               </Row>
               <Row className="content">
                 <TextareaAutosize type="text" />
@@ -98,7 +98,7 @@ export default function TemplateCv1() {
             </Row>
             <Row>
               <Row className="content-title">
-                <h5>Kỹ năng</h5>
+                <h5>Skill</h5>
               </Row>
               <Row className="content">
                 <TextareaAutosize type="text" />
@@ -114,14 +114,14 @@ export default function TemplateCv1() {
             </Row>
             <Row>
               <Row className="content-title">
-                <h5>Sở thích</h5>
+                <h5>Preferences</h5>
               </Row>
               <Row className="content">
                 <TextareaAutosize type="text" />
               </Row>
             </Row>
             <Row>
-              <Button type="submit">Thêm</Button>
+              <Button type="submit">Save</Button>
             </Row>
           </Container>
         </Form>

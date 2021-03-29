@@ -4,12 +4,12 @@ import Nav from '../nav'
 import tem01 from '../../../assets/template1.jpg'
 import tem02 from '../../../assets/template2.jpg'
 import tem03 from '../../../assets/template3.jpg'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 export default function TemplateUser(props) {
   const styles = {
     width: '330px',
     margin: ' 50px 30px 0 0',
   }
-  const [templ, setTempl] = useState([tem01, tem02, tem03])
   return (
     <div style={{ backgroundColor: 'whitesmoke' }}>
       <Nav />
@@ -29,14 +29,11 @@ export default function TemplateUser(props) {
 
       <Container style={{ display: 'flex', height: '100vh' }}>
         <div>
-          {templ.map((e) => {
-            return (
-              <>
-                {' '}
-                <img src={e} style={{ ...styles }} />
-              </>
-            )
-          })}
+          <Link to={'/templateUser1'}>
+        <img src={tem01} style={{ ...styles }} />
+        </Link>
+        <img src={tem02} style={{ ...styles }} />
+        <img src={tem03} style={{ ...styles }} />
         </div>
       </Container>
     </div>

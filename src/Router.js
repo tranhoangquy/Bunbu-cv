@@ -12,6 +12,11 @@ const route = [
   {
     path: '/templateuser',
     exact: false,
+    main: () => <TemplateUser />,
+  },
+  {
+    path: '/templateUser1',
+    exact: false,
     main: () => <TemplateCv1 />,
   },
 ]
