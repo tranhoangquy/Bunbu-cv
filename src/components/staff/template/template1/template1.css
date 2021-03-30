@@ -1,15 +1,20 @@
 #avatar {
-    height: 150px;
-    width: 150px;
-  }
+  padding-top: 28px;
+  height: 201px;
+  width: 168px;
+}
+  
   #container {
-    max-width: 950px;
+    max-width: 57%;
     margin: 90px auto;
     border: 1px solid;
     border-radius: 22px 22px;
     box-shadow: 2px 5px 23px 10px #888888;
   }
   
+  .personal-information{
+    padding-top: 5%;
+  }
   .personal-information input {
     border: none;
   }
@@ -29,7 +34,7 @@
     margin-top: 5px;
     width: 100%;
   }
-  .content textarea {
+  .wrapper-input textarea {
     width: 100%;
     border: 1px solid #e5e5e5;
     word-wrap: break-word;
@@ -37,10 +42,19 @@
     font-size: 12px;
     border-radius: 14px 14px;
     outline: none;
+    margin-top: 5px;
+    padding : 10px;
   }
 .container-form{
-  padding: 6px 5px 15px 24px;
+  padding: 6px 5px 15px 11%;
 }
 .template1-cv{
-  width: 70%;
+  width: 90%;
+  margin-bottom: 5px;
+}
+.wrapper-input{
+  width: 100%;
+}.btn-save{
+  margin-top: 10px;
+  width: 15%;
 }

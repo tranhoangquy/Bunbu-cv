@@ -49,10 +49,10 @@ return (
   <Form onSubmit={handleSubmit} className="container-form"> 
     <Container className="personal-information">
       <Row>
-        <Col sm={2}>
+        <Col >
           <img src={bunbu} id="avatar" />
         </Col>
-        <Col sm={3}>
+        <Col >
           <Row>
             <Form.Control placeholder="Full name" name="fullname"
               required={true}
@@ -137,8 +137,8 @@ return (
         <Row className="content-title">
           <h5>Career goals</h5>
         </Row>
-        <Row className="content">
-          <TextareaAutosize type="text" name="careergoals"
+        <Row className="wrapper-input" >
+          <TextareaAutosize type="text" name="careergoals" 
            required={true}
            value={valueCreateCv.careergoals}
            onChange={handleValue}
@@ -149,7 +149,7 @@ return (
         <Row className="content-title">
           <h5>Education</h5>
         </Row>
-        <Row className="content">
+        <Row className="wrapper-input">
           <TextareaAutosize type="text" name="education"
           required={true}
           value={valueCreateCv.education}
@@ -161,7 +161,7 @@ return (
         <Row className="content-title">
           <h5>Work experience</h5>
         </Row>
-        <Row className="content">
+        <Row className="wrapper-input">
           <TextareaAutosize type="text" name="workexperience"
           required={true}
           value={valueCreateCv.workexperience}
@@ -173,7 +173,7 @@ return (
         <Row className="content-title">
           <h5>Skill</h5>
         </Row>
-        <Row className="content">
+        <Row className="wrapper-input">
           <TextareaAutosize type="text" name="skill"
           required={true}
           value={valueCreateCv.skill}
@@ -185,7 +185,7 @@ return (
         <Row className="content-title">
           <h5>Project</h5>
         </Row>
-        <Row className="content">
+        <Row className="wrapper-input">
           <TextareaAutosize type="text" name="project"
            required={true}
            value={valueCreateCv.project}
@@ -197,7 +197,7 @@ return (
         <Row className="content-title">
           <h5>Preferences</h5>
         </Row>
-        <Row className="content">
+        <Row className="wrapper-input">
           <TextareaAutosize type="text" name="preferences"
           required={true}
           value={valueCreateCv.preferences}
@@ -206,7 +206,7 @@ return (
         </Row>
       </Row>
       <Row>
-        <Button type="submit">Save</Button>
+        <Button className="btn-save" type="submit">Save</Button>
       </Row>
     </Container>
   </Form>
