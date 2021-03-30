@@ -17,7 +17,7 @@ export default function Nav(props) {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={'/listcvuser'} className="nav-link">
+            <Link to={'/staff/listcv'} className="nav-link">
               List CV
             </Link>
           </li>
@@ -29,7 +29,7 @@ export default function Nav(props) {
           >
             <dl style={{ textAlign: 'center' }}>
               <dt style={{ marginBottom: 10 }}>
-                <Link to="/profileadmin">profile</Link>
+                <Link to="/staff/profile">profile</Link>
               </dt>
               <dt>
                 <Link
