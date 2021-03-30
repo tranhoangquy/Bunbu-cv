@@ -13,7 +13,7 @@ export default function TemplateUser(props) {
       <Nav />
       <h2 className="title"> List Template</h2>
 
-      <Form>
+      <Form className="container-template">
         <Form.Row>
           <Form.Control
             type="text"
