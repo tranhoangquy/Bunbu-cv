@@ -1,13 +1,13 @@
 import Recat, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { SplitButton } from 'react-bootstrap'
-import bunbu from '../../assets/logo.png'
-import '../staff/homeStaff/homeStaff.css'
+import bunbu from 'assets/logo.png'
+import '../../staff/homeStaff/homeStaff.css'
 export default function Nav(props) {
   return (
     <>
       <nav className="navbar navbar-expand navbar-light fixed-top">
-        <Link to={'user'} className="navbar-brand">
+        <Link to={'staff'} className="navbar-brand">
           <img src={bunbu} style={{ height: '55px' }} />
         </Link>
         <ul className="navbar-nav ">

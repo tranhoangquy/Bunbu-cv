@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from '../nav/nav'
 import Container from 'react-bootstrap'
 import './homeAdmin.css'
-import Background from '../../../assets/background.jpg'
+import Background from 'assets/background.jpg'
 export default function HomeAdmin(props) {
   return (
     <>

@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Nav from '../../nav'
+import Nav from '../../nav/nav'
 import bunbu from 'assets/bunbu.png'
 import phoneIcon from 'assets/icon/phone.png'
 import emailIcon from 'assets/icon/email.png'

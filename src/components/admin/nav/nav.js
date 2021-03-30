@@ -1,7 +1,7 @@
 import Recat, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { SplitButton } from 'react-bootstrap'
-import bunbu from '../../../assets/logo.png'
+import bunbu from 'assets/logo.png'
 import './nav.css'
 export default function Nav(props) {
   return (
