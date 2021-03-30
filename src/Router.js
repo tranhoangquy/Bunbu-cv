@@ -50,7 +50,7 @@ const route = [
     main: () => <TemplateUser />,
   },
   {
-    path: '/templates/template1',
+    path: '/templates/1',
     exact: true,
     main: () => <TemplateCv1 />,
   },

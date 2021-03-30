@@ -26,7 +26,7 @@ export default function TemplateUser(props) {
 
       <Container className="template1" >
         <div>
-          <Link to={'/templates/template1'}>
+          <Link to={'/templates/1'}>
         <img src={tem01} className="template"/>
         </Link>
         <img src={tem02} className="template"/>
