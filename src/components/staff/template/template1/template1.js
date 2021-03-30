@@ -11,6 +11,8 @@ import { Row, Col, Form, Button, Container } from 'react-bootstrap'
 import TextareaAutosize from 'react-textarea-autosize'
 import './template1.css'
 import {phonenumber,email} from '../../../../pattern'
+import { creatCV } from '../../../../actions/handlingStaff'
+import { useSelector, useDispatch } from 'react-redux'
 export default function TemplateCv1() {
   const [valueCreateCv, setValueCreateCv] = useState({
     fullname:'',
@@ -27,20 +29,25 @@ export default function TemplateCv1() {
     project:'',
     preferences:''
   })
+  // const data = useSelector((state) => state.users.data)
+  // const requesting = useSelector((state) => state.users.requesting)
+  const dispatch = useDispatch()
   const handleValue = (e) => {
     const { name, value } = e.target
     setValueCreateCv((prevState) => ({
       ...prevState,
       [name]: value,
     }))
-    console.log(valueCreateCv);
   }
- 
+ const handleSubmit = (e)=>{
+   e.preventDefault();
+   dispatch(creatCV({valueCreateCv}))
+ }
 return (
 <>
 <Nav />
 <Container id="container">
-  <Form>
+  <Form onSubmit={handleSubmit}>
     <Container className="personal-information">
       <Row>
         <Col sm={2}>
@@ -48,15 +55,15 @@ return (
         </Col>
         <Col sm={3}>
           <Row>
-            <Form.Control placeholder="Full name" name="name"
+            <Form.Control placeholder="Full name" name="fullname"
               required={true}
-              value={valueCreateCv.name}
+              value={valueCreateCv.fullname}
               onChange={handleValue} />
           </Row>
           <Row>
-            <Form.Control placeholder="Position Applying" name="positionapplying"
+            <Form.Control placeholder="Position Applying" name="positionApplying"
             required={true}
-              value={valueCreateCv.positionapplying}
+              value={valueCreateCv.positionApplying}
               onChange={handleValue} />
           </Row>
           <Row sm={3} style={{ marginTop: '10px' }}>
@@ -126,7 +133,7 @@ return (
         </Col>
       </Row>
     </Container>
-    <Container className="group-content">
+    <Container className="group-content-template1">
       <Row>
         <Row className="content-title">
           <h5>Career goals</h5>

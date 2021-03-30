@@ -24,7 +24,7 @@ export default function TemplateUser(props) {
         </Form.Row>
       </Form>
 
-      <Container >
+      <Container className="template1" >
         <div>
           <Link to={'/templates/template1'}>
         <img src={tem01} className="template"/>
