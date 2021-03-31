@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Button, Row, Col, Form } from 'react-bootstrap'
 import Nav from '../nav/nav'
 import tmp01 from 'assets/template1.jpg'
 // import DeleteModal from '../showModal/deleteModal'
 import EditCvModal from '../showModal/editModal/editModal'
 import ViewCvModal from '../showModal/viewModal/viewModal'
+import { useDispatch } from 'react-redux'
+import { fetchCV } from 'actions/handlingStaff'
 export default function ListCv() {
+  const dispatch =useDispatch()
+  useEffect(()=>{
+    dispatch(fetchCV())
+  },[])
   return (
     <>
       <Nav />

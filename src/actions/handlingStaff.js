@@ -1,7 +1,5 @@
 import { PAGE_REQUEST,CREATE_CV_SUCCESS, CREATE_CV_ERROR, FETCH_CV_SUCESS, FETCH_CV_ERROR} from "../constants"
 import axios from "./axios"
-
-
 export const creatCV =({valueCreateCv,avatarCv}) =>{
   return (dispatch) => {
     axios
