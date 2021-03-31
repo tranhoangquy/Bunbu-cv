@@ -14,10 +14,10 @@ const staffReducer = (state= initialState, actions) =>{
 			requesting: true,
 			}
 		case CREATE_CV_SUCCESS:
-		console.log(actions.data);
 			return{
 					...state,
 					requesting: false,
+					data:actions.data
 			}
 		case CREATE_CV_ERROR:
 			return{
