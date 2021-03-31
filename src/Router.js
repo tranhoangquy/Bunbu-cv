@@ -8,6 +8,7 @@ import ProfileAdmin from './components/admin/profileAdmin/profileAdmin/profileAd
 import HomeStaff from './components/staff/homeStaff/homeStaff'
 import TemplateUser from './components/staff/template/listTemplate/listTemplate'
 import TemplateCv1 from './components/staff/template/template1/template1'
+import ListCv from 'components/staff/listCv/listCv'
 const route = [
   {
     path: '/admin',
@@ -54,6 +55,10 @@ const route = [
     exact: true,
     main: () => <TemplateCv1 />,
   },
-    
+  {
+    path: '/staff/listcv',
+    exact: true,
+    main: () => <ListCv/>,
+  },
 ]
 export default route

@@ -19,3 +19,5 @@ export const FETCH_PROFILE_ERROR = 'FETCH_PROFILE_ERROR'
 //---------constrain staff------
 export const CREATE_CV_SUCCESS = 'CREATE_CV_SUCCESS'
 export const CREATE_CV_ERROR = 'CREATE_CV_ERROR'
+export const FETCH_CV_SUCESS = 'FETCH_CV_SUCESS'
+export const FETCH_CV_ERROR = 'FETCH_CV_ERROR'
