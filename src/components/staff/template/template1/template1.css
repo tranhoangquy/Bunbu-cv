@@ -1,50 +1,51 @@
-#avatar {
+.avatar {
   padding-top: 28px;
   height: 201px;
   width: 168px;
 }
-  
-  #container {
-    max-width: 57%;
-    margin: 90px auto;
-    border: 1px solid;
-    border-radius: 22px 22px;
-    box-shadow: 2px 5px 23px 10px #888888;
-  }
-  
-  .personal-information{
-    padding-top: 5%;
-  }
-  .personal-information input {
-    border: none;
-  }
-  .personal-information .row-cols-sm-3 input {
-    height: 15px;
-    margin-top: 5px;
-  }
-  .group-content {
-    margin-top: 15px;
-    padding-left: 7%;
-  }
-  .content-title {
-    border-bottom: 1px solid;
-    width: 100%;
-  }
-  .group-content-template1 {
-    margin-top: 5px;
-    width: 100%;
-  }
-  .wrapper-input textarea {
-    width: 100%;
-    border: 1px solid #e5e5e5;
-    word-wrap: break-word;
-    word-break: break-all;
-    font-size: 12px;
-    border-radius: 14px 14px;
-    outline: none;
-    margin-top: 5px;
-    padding : 10px;
-  }
+#container {
+  max-width: 57%;
+  margin: 90px auto;
+  border: 1px solid;
+  border-radius: 22px 22px;
+  box-shadow: 2px 5px 23px 10px #888888;
+}
+.personal-information{
+  padding-top: 5%;
+}
+.personal-information-header{
+  margin-right: 23%;
+}
+.personal-information input {
+  border: none;
+}
+.personal-information .row-cols-sm-3 input {
+  height: 15px;
+  margin-top: 5px;
+}
+.group-content {
+  margin-top: 15px;
+  padding-left: 7%;
+}
+.content-title {
+  border-bottom: 1px solid;
+  width: 100%;
+}
+.group-content-template1 {
+  margin-top: 5px;
+  width: 100%;
+}
+.wrapper-input textarea {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 12px;
+  border-radius: 14px 14px;
+  outline: none;
+  margin-top: 5px;
+  padding : 10px;
+}
 .container-form{
   padding: 6px 5px 15px 11%;
 }
@@ -57,4 +58,7 @@
 }.btn-save{
   margin-top: 10px;
   width: 15%;
+}
+#input[type="file"] {
+	display: none;
 }

@@ -28,9 +28,13 @@ export default function TemplateCv1() {
     project:'',
     preferences:''
   })
-  // const data = useSelector((state) => state.users.data)
-  // const requesting = useSelector((state) => state.users.requesting)
+
+  const [avatarCv, setAvatarCv] = useState(
+   "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+  );
+
   const dispatch = useDispatch()
+
   const handleValue = (e) => {
     const { name, value } = e.target
     setValueCreateCv((prevState) => ({
@@ -38,10 +42,20 @@ export default function TemplateCv1() {
       [name]: value,
     }))
   }
+
+  const handleImg = (e) => {
+    if(e.target.files[0]) {
+      setAvatarCv(
+           URL.createObjectURL(e.target.files[0]),
+        );    
+    }   
+  }
+
  const handleSubmit = (e)=>{
    e.preventDefault();
-   dispatch(creatCV({valueCreateCv}))
+   dispatch(creatCV({valueCreateCv,avatarCv}))
  }
+ 
 return (
 <>
 <Nav />
@@ -50,9 +64,18 @@ return (
     <Container className="personal-information">
       <Row>
         <Col >
-          <img src={bunbu} id="avatar" />
+        <div className="img-holder">
+						<img src={avatarCv} alt="" id="avatar" className="avatar" />
+					</div>
+					<input type="file" accept="image/*" name="image-upload" id="input"  onChange={handleImg}
+/>
+					<div className="label">
+          <label className="image-upload" htmlFor="input">
+						<i className="material-icons">Choose your Photo</i>
+					</label>
+          </div>
         </Col>
-        <Col >
+        <Col className="personal-information-header">
           <Row>
             <Form.Control placeholder="Full name" name="fullname"
               required={true}

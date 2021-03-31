@@ -1,15 +1,15 @@
 import { PAGE_REQUEST,CREATE_CV_SUCCESS, CREATE_CV_ERROR} from "../constants"
 
 
-export const creatCV =({valueCreateCv}) =>{
+export const creatCV =({valueCreateCv,avatarCv}) =>{
     return (dispatch) => {
         axios
-          .post('/cvs', valueCreateCv)
+          .post('http://localhost:3000/cvs', {valueCreateCv,avatarCv})
           .then(dispatch({ type: PAGE_REQUEST }))
           .then((reponse) => {
             dispatch({
               type: CREATE_CV_SUCCESS,
-              data: { ...reponse.data, ...valueCreateCv },
+              data: { ...reponse.data, ...valueCreateCv,...avatarCv },
             })
           })
           .catch((error) => {
