@@ -36,7 +36,7 @@
         "yup": "^0.32.9"
     },
     "scripts": {
-        "start": "set PORT=3001 && react-scripts start",
+        "start": " PORT=3001 react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
@@ -60,6 +60,7 @@
         ]
     },
     "devDependencies": {
+        "eslint": "^7.23.0",
         "eslint-plugin-you-dont-need-lodash-underscore": "^6.11.0"
     }
 }
