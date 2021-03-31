@@ -57,18 +57,17 @@ export default function TemplateCv1() {
  }
  
 return (
-<>
-<Nav />
-<Container id="container">
-  <Form onSubmit={handleSubmit} className="container-form"> 
-    <Container className="personal-information">
-      <Row>
-        <Col >
-        <div className="img-holder">
-						<img src={avatarCv} alt="" id="avatar" className="avatar" />
-					</div>
-					<input type="file" accept="image/*" name="image-upload" id="input"  onChange={handleImg}
-/>
+  <>
+  <Nav />
+  <Container id="container">
+    <Form onSubmit={handleSubmit} className="container-form"> 
+      <Container className="personal-information">
+        <Row>
+          <Col >
+          <div className="img-holder">
+              <img src={avatarCv} alt="" id="avatar" className="avatar" />
+            </div>
+            <input type="file" accept="image/*" name="image-upload" id="input"  onChange={handleImg} />
 					<div className="label">
           <label className="image-upload" htmlFor="input">
 						<i className="material-icons">Choose your Photo</i>

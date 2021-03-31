@@ -7,7 +7,6 @@ import tem03 from 'assets/template3.jpg'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import './listTemplate.css'
 export default function TemplateUser(props) {
-
   return (
     <div >
       <Nav />
