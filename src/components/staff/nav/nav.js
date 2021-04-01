@@ -2,27 +2,22 @@ import Recat, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { SplitButton } from 'react-bootstrap'
 import bunbu from 'assets/logo.png'
-import './nav.css'
+import '../../staff/homeStaff/homeStaff.css'
 export default function Nav(props) {
   return (
     <>
       <nav className="navbar navbar-expand navbar-light fixed-top">
-        <Link to={'admin'} className="navbar-brand">
-          <img src={bunbu} />
+        <Link to={'/staff'} className="navbar-brand">
+          <img src={bunbu} style={{ height: '55px' }} />
         </Link>
         <ul className="navbar-nav ">
           <li className="nav-item">
-            <Link to={'/template'} className="nav-link">
+            <Link to={'/templates'} className="nav-link">
               Template
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={'/users'} className="nav-link">
-              Account
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to={'/users'} className="nav-link">
+            <Link to={'/staff/listcv'} className="nav-link">
               List CV
             </Link>
           </li>
@@ -32,9 +27,9 @@ export default function Nav(props) {
             id="dropdown-split-varirants-Outline-primary"
             title="User"
           >
-            <dl>
-              <dt>
-                <Link to="/admin/profile">profile</Link>
+            <dl style={{ textAlign: 'center' }}>
+              <dt style={{ marginBottom: 10 }}>
+                <Link to="/staff/profile">profile</Link>
               </dt>
               <dt>
                 <Link
@@ -43,7 +38,7 @@ export default function Nav(props) {
                   //     props.changeStatusLogin(false)
                   // }
                 >
-                  Log out
+                  log out
                 </Link>
               </dt>
             </dl>

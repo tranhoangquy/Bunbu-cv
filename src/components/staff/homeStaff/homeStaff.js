@@ -1,14 +1,13 @@
 import React from 'react'
 import Nav from '../nav/nav'
 import Container from 'react-bootstrap'
-import './homeAdmin.css'
-import Background from 'assets/background.jpg'
-export default function HomeAdmin(props) {
+import './homeStaff.css'
+import Background from '../../../assets/bunbu.png'
+export default function HomeStaff(props) {
   return (
     <>
       <Nav />
-
-      <div style={{ margin: '15% 0px 0px 0px' }}>
+      <div className="background">
         <img src={Background} />
       </div>
     </>

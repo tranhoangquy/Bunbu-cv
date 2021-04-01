@@ -10,7 +10,7 @@ import {
   loadUser,
   sortUserByRole,
   searchUser,
-} from '../../../../actions/handlingUser'
+} from '../../../../actions/handlingAdmin'
 import ClipLoader from 'react-spinners/ClipLoader'
 import sortIcon from '../../../../assets/sort.png'
 import './listUser.css'

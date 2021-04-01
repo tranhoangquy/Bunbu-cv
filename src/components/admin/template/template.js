@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Container, Button, Form } from 'react-bootstrap'
 import Nav from '../nav/nav'
-import tem01 from '../../../assets/template1.jpg'
-import tem02 from '../../../assets/template2.jpg'
-import tem03 from '../../../assets/template3.jpg'
+import tem01 from 'assets/template1.jpg'
+import tem02 from 'assets/template2.jpg'
+import tem03 from 'assets/template3.jpg'
 export default function Template(props) {
   const styles = {
     width: '330px',

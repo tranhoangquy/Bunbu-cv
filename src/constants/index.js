@@ -1,3 +1,4 @@
+//---------constrain admin------
 export const PAGE_REQUEST = 'FETCH_USERS_REQUEST'
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS'
 export const FETCH_USERS_ERROR = 'FETCH_USERS_ERROR'
@@ -14,3 +15,7 @@ export const SEARCH_USER_SUCCESS = 'SEARCH_USER_SUCCESS'
 export const SEARCH_USER_ERROR = 'SEARCH_USER_ERROR'
 export const FETCH_PROFILE_SUCCESS = 'FETCH_PROFILE_SUCCESS'
 export const FETCH_PROFILE_ERROR = 'FETCH_PROFILE_ERROR'
+
+//---------constrain staff------
+export const CREATE_CV_SUCCESS = 'CREATE_CV_SUCCESS'
+export const CREATE_CV_ERROR = 'CREATE_CV_ERROR'

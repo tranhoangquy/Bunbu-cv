@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { AiFillEdit } from 'react-icons/ai'
 import { Row, Col, Form, Button, Container, Modal } from 'react-bootstrap'
-import { email, password, phonenumber } from '../../../../pattern'
-import { loadUser, updateUser } from '../../../../actions/handlingUser'
+import { email, password, phonenumber } from 'pattern'
+import { loadUser, updateUser } from 'actions/handlingAdmin'
 import { useSelector, useDispatch } from 'react-redux'
 export default function EditModal(props) {
   const [showEditModal, setShowEditModal] = useState(false)

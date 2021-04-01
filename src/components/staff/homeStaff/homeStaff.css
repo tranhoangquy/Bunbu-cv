@@ -1,0 +1,17 @@
+Nav {
+  background-color: rgba(232, 226, 226, 0.713);
+}
+.navbar-expand .navbar-nav {
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+.background{
+  margin: 15% 0px 0px 0px
+}
+.navbar-expand{
+  background: whitesmoke;
+}

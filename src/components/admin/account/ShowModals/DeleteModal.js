@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { AiFillDelete } from 'react-icons/ai'
 import { Button } from 'react-bootstrap'
 import { useSelector, useDispatch } from 'react-redux'
-import { deleteUser } from '../../../../actions/handlingUser'
-import { getTranslatedText as t } from '../../../../i18next/translations/index'
+import { deleteUser } from 'actions/handlingAdmin'
+import { getTranslatedText as t } from 'i18next/translations/index'
 export default function DeleteModal(props) {
   const data = useSelector((state) => state.users.data)
   const requesting = useSelector((state) => state.users.requesting)
