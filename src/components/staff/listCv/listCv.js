@@ -5,9 +5,10 @@ import tmp01 from 'assets/template1.jpg'
 // import DeleteModal from '../showModal/deleteModal'
 import EditCvModal from '../showModal/editModal/editModal'
 import ViewCvModal from '../showModal/viewModal/viewModal'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { fetchCV } from 'actions/handlingStaff'
-export default function ListCv() {
+export default function ListCv(props) {
+  const data = useSelector((state) => state.cvs.data)
   const dispatch =useDispatch()
   useEffect(()=>{
     dispatch(fetchCV())

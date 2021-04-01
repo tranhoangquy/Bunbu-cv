@@ -22,16 +22,14 @@ export const fetchCV = ()=>{
     axios
       .get('/cvs')
       .then(dispatch({type:PAGE_REQUEST}))
-      .then((response)=>{
-        dispatch({
-
-          type:FETCH_CV_SUCESS,
-          data:{...response.data}
+      .then((reponse) => {dispatch({
+          type: FETCH_CV_SUCESS,
+          data: { ...reponse.data},
         })
-        .catch((error)=>{
-          dispatch({type:FETCH_CV_ERROR,
-          maessage:error})
-        })
+      })
+      .catch((error)=>{
+        dispatch({type:FETCH_CV_ERROR,
+        maessage:error})
       })
   }
 }
