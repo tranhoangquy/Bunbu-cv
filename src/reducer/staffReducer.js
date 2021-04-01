@@ -15,19 +15,19 @@ switch (actions.type){
 		}
 	case CREATE_CV_SUCCESS:
 		return{
-				...state,
-				requesting: false,
-				data:actions.data
+			...state,
+			requesting: false,
+			data:actions.data
 		}
 	case CREATE_CV_ERROR:
 		return{
-				...state,
-				requesting: false,
-				success: false,
-				message: actions.message,
+			...state,
+			requesting: false,
+			success: false,
+			message: actions.message,
 		}
-		default:
-			return state
+	default:
+		return state
 }
 }
 export default staffReducer
